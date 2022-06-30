@@ -23,13 +23,14 @@ const ProductImgStyle = styled('img')({
 
 ShopProductCard.propTypes = {
   product: PropTypes.object,
+  paramMargin: PropTypes.number,
 };
 
-export default function ShopProductCard({ product }) {
+export default function ShopProductCard({ product, paramMargin }) {
   const { name, cover, price, colors, status, priceSale } = product;
 
   return (
-    <Card>
+    <Card sx={{ ml: paramMargin, mr: paramMargin }}>
       <Box sx={{ pt: '100%', position: 'relative' }}>
         {status && (
           <Label
